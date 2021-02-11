@@ -51,7 +51,7 @@ function draw() {
     {
       fill("white");
       text("Player " + i + " (" + allPlayers[plr].name + ") Score: " +  allPlayers[plr].score, 50, y);
-      if(allPlayers[plr].score === 3)
+      if(allPlayers[plr].score === 10)
       {
         end();
       }
