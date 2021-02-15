@@ -30,8 +30,8 @@ class Game{
       player1.addImage("player1",player_img); 
     
       player2 = createSprite(800,500);
-      player2.addImage("player2", player_img);   
-    players=[player1,player2];
+      player2.addImage("player2", player_img);
+      if(player1 != null && player2 != null) players=[player1,player2];
     }
     
     play(){
