@@ -47,10 +47,10 @@ class Game{
 
         for(var plr in allPlayers)
         {
-        
+          console.log("plr: " + plr);
             index = index+1;
             x = 500-allPlayers[plr].distance;
-            y=500;
+            y = 500;
             
             players[index -1].x = x;
             players[index - 1].y = y;
@@ -59,20 +59,33 @@ class Game{
             // the name of the player on the basket. 
             if(index === player.index)
             {
-            fill("black");
-            textSize(17);
-            text(allPlayers[plr].name, x - 50, y + 25);
+              fill("black");
+              textSize(17);
+              text(allPlayers[plr].name, x - 50, y + 25);
             }
 
-            if(players[index-1].isTouching(fruitGroup))
-            {
-                if(index === player.index)
+              for(var i = 0; i < fruitGroup.length; i++)
+              {
+                if(index === 1)
                 {
+                  if(fruitGroup.get(i).isTouching(player1))
+                  {
+                    fruitGroup.get(i).destroy();
                     player.score = player.score + 1;
                     player.update();
-                    fruitGroup.destroyEach();
+                  }
                 }
-            }
+                
+                if(index === 2)
+                {
+                  if(fruitGroup.get(i).isTouching(player2))
+                  {
+                    fruitGroup.get(i).destroy();
+                    player.score = player.score + 1;
+                    player.update();
+                  }
+                }
+              }
         }
 
 

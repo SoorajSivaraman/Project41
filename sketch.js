@@ -26,6 +26,7 @@ function preload(){
 function setup() {
   createCanvas(1000, 600);
   database = firebase.database();
+  fruitGroup = createGroup();
   game = new Game();
   game.getState();
   game.start();
